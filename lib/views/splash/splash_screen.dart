@@ -19,7 +19,8 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
 
     Future.delayed(Duration(seconds: 2), () async {
-      final user = await _auth.currentUser.uid;
+      final user = await _auth.currentUser?.uid;
+      if (user == null) print('usernull');
       return Navigator.pushReplacementNamed(
           context,
           user == null
