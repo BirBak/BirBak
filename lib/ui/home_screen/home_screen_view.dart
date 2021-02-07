@@ -1,4 +1,4 @@
-import 'package:birbak/service/earth_quake_service.dart';
+import 'package:birbak/util/service/earth_quake_service.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreenView extends StatelessWidget {
@@ -16,8 +16,10 @@ class HomeScreenView extends StatelessWidget {
               );
             } else if (snapshot.hasData) {
               return ListView.builder(
+                  itemCount: 10,
                   itemBuilder: (context, index) => Card(
-                        child: Text('${snapshot.data[index].sehir}'),
+                        child: Text(
+                            '${snapshot.data[index].yer} /${snapshot.data[index].siddet}'),
                       ));
             } else {
               return Center(

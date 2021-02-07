@@ -11,9 +11,9 @@ class EarthQuake {
         this.enlem,
         this.boylam,
         this.derinlik,
-        this.buyukluk,
+        this.siddet,
         this.yer,
-        this.sehir,
+        this.tip,
     });
 
     String tarih;
@@ -21,9 +21,9 @@ class EarthQuake {
     String enlem;
     String boylam;
     String derinlik;
-    String buyukluk;
+    String siddet;
     String yer;
-    String sehir;
+    String tip;
 
     factory EarthQuake.fromJson(Map<String, dynamic> json) => EarthQuake(
         tarih: json['tarih'],
@@ -31,9 +31,9 @@ class EarthQuake {
         enlem: json['enlem'],
         boylam: json['boylam'],
         derinlik: json['derinlik'],
-        buyukluk: json['buyukluk'],
+        siddet: json['siddet'],
         yer: json['yer'],
-        sehir: json['sehir'],
+        tip: json['tip'],
     );
 
     Map<String, dynamic> toJson() => {
@@ -42,8 +42,8 @@ class EarthQuake {
         'enlem': enlem,
         'boylam': boylam,
         'derinlik': derinlik,
-        'buyukluk': buyukluk,
+        'siddet': siddet,
         'yer': yer,
-        'sehir': sehir,
+        'tip': tip,
     };
 }

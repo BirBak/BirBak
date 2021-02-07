@@ -1,5 +1,5 @@
-import 'package:birbak/views/home_screen/home_screen_view.dart';
-import 'package:birbak/views/login_screen/login_screen_view.dart';
+import 'package:birbak/ui/auth_screen/auth_screen_view.dart';
+import 'package:birbak/ui/home_screen/home_screen_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:after_init/after_init.dart';

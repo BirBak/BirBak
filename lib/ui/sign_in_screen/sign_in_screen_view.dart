@@ -139,16 +139,12 @@ class _EmailPasswordFormState extends State<_EmailPasswordForm> {
   // Example code of how to sign in with email and password.
   Future<void> _signInWithEmailAndPassword() async {
     try {
-      var user;
-      await _auth.setPersistence(Persistence.SESSION).then((value) async {
-        user = (await _auth.signInWithEmailAndPassword(
-          email: _emailController.text,
-          password: _passwordController.text,
-        ))
-            .user;
-        return true;
-      });
-
+      final user = (await _auth.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      ))
+          .user;
+          
       Scaffold.of(context).showSnackBar(
         SnackBar(
           content: Text('${user.email} signed in'),
