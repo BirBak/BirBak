@@ -1,9 +1,16 @@
 import 'package:birbak/ui/afet_detay_screen/afet_detay_screen_view.dart';
 import 'package:birbak/ui/home_screen/components/basliklar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+FirebaseAuth _auth = FirebaseAuth.instance;
 
 class HomePageScreenView extends StatelessWidget {
   static const routeNames = '/Home';
+  // Example code for sign out.
+  Future<void> _signOut() async {
+    await _auth.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +43,9 @@ class HomePageScreenView extends StatelessWidget {
       backgroundColor: Colors.blueGrey[600],
       appBar: AppBar(
         title: Text("Bir Bak"),
+        actions: [
+          IconButton(icon: Icon(Icons.exit_to_app), onPressed: () => _signOut())
+        ],
       ),
       body: Center(
         child: Container(
