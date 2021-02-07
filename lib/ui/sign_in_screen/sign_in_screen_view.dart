@@ -1,3 +1,4 @@
+import 'package:birbak/ui/home_screen/home_screen_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
@@ -23,12 +24,11 @@ class _SignInPageState extends State<SignInPage> {
         title: Text(widget.title),
         actions: <Widget>[
           Builder(builder: (BuildContext context) {
-            return FlatButton(
-              textColor: Theme.of(context).buttonColor,
+            return TextButton(
               onPressed: () async {
                 final user = _auth.currentUser;
                 if (user == null) {
-                  Scaffold.of(context).showSnackBar(const SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text('No one has signed in.'),
                   ));
                   return;
@@ -36,7 +36,7 @@ class _SignInPageState extends State<SignInPage> {
                 await _signOut();
 
                 final uid = user.uid;
-                Scaffold.of(context).showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text('$uid has successfully signed out.'),
                 ));
               },
@@ -144,15 +144,15 @@ class _EmailPasswordFormState extends State<_EmailPasswordForm> {
         password: _passwordController.text,
       ))
           .user;
-          
-      Scaffold.of(context).showSnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('${user.email} signed in'),
         ),
       );
+      await Navigator.pushReplacementNamed(context, HomeScreenView.routeNames);
     } catch (e) {
       print(e);
-      Scaffold.of(context).showSnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Failed to sign in with Email & Password'),
         ),
