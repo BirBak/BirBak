@@ -1,6 +1,6 @@
-import 'package:birbak/ui/home_screen/home_screen_view.dart';
-import 'package:flutter/material.dart';
+import 'package:birbak/ui/home_screen/home_page_screen_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -97,7 +97,7 @@ class _EmailPasswordFormState extends State<_EmailPasswordForm> {
                   controller: _emailController,
                   decoration: const InputDecoration(labelText: 'Email'),
                   validator: (String value) {
-                    if (value.isEmpty) return 'Please enter some text';
+                    if (value.isEmpty) return 'Lütfen Mail Adresinizi Giriniz';
                     return null;
                   },
                 ),
@@ -105,7 +105,7 @@ class _EmailPasswordFormState extends State<_EmailPasswordForm> {
                   controller: _passwordController,
                   decoration: const InputDecoration(labelText: 'Password'),
                   validator: (String value) {
-                    if (value.isEmpty) return 'Please enter some text';
+                    if (value.isEmpty) return 'Lütfen Şifrenizi Giriniz';
                     return null;
                   },
                   obscureText: true,
@@ -149,7 +149,9 @@ class _EmailPasswordFormState extends State<_EmailPasswordForm> {
           content: Text('${user.email} signed in'),
         ),
       );
-      await Navigator.pushReplacementNamed(context, HomeScreenView.routeNames);
+      await Navigator.pop(context);
+      await Navigator.pushReplacementNamed(
+          context, HomePageScreenView.routeNames);
     } catch (e) {
       print(e);
       ScaffoldMessenger.of(context).showSnackBar(

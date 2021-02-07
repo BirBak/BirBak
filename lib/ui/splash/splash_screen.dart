@@ -1,8 +1,8 @@
+import 'package:after_init/after_init.dart';
 import 'package:birbak/ui/auth_screen/auth_screen_view.dart';
-import 'package:birbak/ui/home_screen/home_screen_view.dart';
+import 'package:birbak/ui/home_screen/home_page_screen_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:after_init/after_init.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key key}) : super(key: key);
@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen>
           context,
           user == null
               ? AuthTypeSelector.routeNames
-              : HomeScreenView.routeNames);
+              : HomePageScreenView.routeNames);
     });
   }
 

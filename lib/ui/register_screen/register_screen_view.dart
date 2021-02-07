@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:birbak/ui/home_screen/home_page_screen_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_builder.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -107,6 +108,9 @@ class _RegisterPageState extends State<RegisterPage> {
         _success = true;
         _userEmail = user.email;
       });
+      await Navigator.pop(context);
+      await Navigator.pushReplacementNamed(
+          context, HomePageScreenView.routeNames);
     } else {
       _success = false;
     }
