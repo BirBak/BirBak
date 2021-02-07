@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "346380134593",
+    "firebase_url": "https://birbak-8f16b-default-rtdb.firebaseio.com",
+    "project_id": "birbak-8f16b",
+    "storage_bucket": "birbak-8f16b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346380134593:android:02e5b0ca8c3cb37e2f4c40",
+        "android_client_info": {
+          "package_name": "com.betaclass.birbak.birbak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346380134593-pbm10qu6msm02333cdrghtjnt2to4b68.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.betaclass.birbak.birbak",
+            "certificate_hash": "4b7c868b71a81774ffcfad3ba0d4b42ef5a174fe"
+          }
+        },
+        {
+          "client_id": "346380134593-so3otjc5fbduffvee674bepsp9laod6c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTYryVrmaCX9ENWMxS6ete_fExxAbIYh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346380134593-so3otjc5fbduffvee674bepsp9laod6c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
