@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
-    Future.delayed(Duration(seconds: 2), () async {
+    Future.delayed(Duration(seconds: 5), () async {
       final user = await _auth.currentUser?.uid;
       if (user == null) print('usernull');
       return Navigator.pushReplacementNamed(
@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen>
         children: [
           Spacer(),
           Image.asset(
-            'assets/img/logo/logo_transparent.png',
+            'assets/img/logo/logo_splash.png',
             width: 250,
           ),
           Spacer()
